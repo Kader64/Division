@@ -1,0 +1,71 @@
+.button {
+    -fx-opacity: 1.0;
+}
+
+.button:hover {
+    -fx-opacity: 0.6;
+}
+
+.vbox {
+    -fx-border-color: #36393f;
+    -fx-border-width: 2px;
+    -fx-padding: 10;
+    -fx-spacing: 8;
+}
+
+.list-cell {
+    -fx-cell-size: 50 ;
+    -fx-animated: true;
+    -fx-padding: 1px;
+}
+
+.list-view {
+    -fx-border-image-width: 0;
+    -fx-background-color: #36393f;
+}
+.chatBox-msg :hover{
+    -fx-background-color: #32353b;
+}
+#statusList {
+    -fx-box-border: transparent;
+}
+
+#userList {
+    -fx-box-border: transparent;
+}
+
+#listHbox {
+    -fx-background-color: #36393f;
+    -fx-padding: 0.2;
+    -fx-spacing: -2;
+}
+
+#onlineUsersHbox {
+    -fx-border-color: #36393f;
+    -fx-border-width: 1px;
+    -fx-padding: 0.2;
+    -fx-spacing: -2;
+}
+.chat_input{
+    -fx-font-family: Calibri;
+    -fx-background-radius: 0;
+    -fx-background-color: #40444b;
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 0;
+    -fx-font-size: 24;
+}
+.chat_input .content{
+    -fx-padding:4 0 0 10;
+    -fx-font-family: Calibri;
+    -fx-background-radius: 0;
+    -fx-background-color: #40444b;
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 0;
+    -fx-font-size: 24;
+}
+.chat_input .scroll-pane {
+    -fx-hbar-policy: never;
+    -fx-vbar-policy: never;
+}
+
+

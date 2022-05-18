@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="620.0" maxWidth="1040.0" prefHeight="620.0" prefWidth="1040.0" style="-fx-background-color: #36393f;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.DivisionController">
+    <center>
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+            <children>
+            <VBox fx:id="chatBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="526.0" prefWidth="800.0" style="-fx-background-color: #36393f;" styleClass="chatBox" />
+                <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="100.0" VBox.vgrow="NEVER">
+                    <children>
+                        <TextArea fx:id="messageBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="100.0" nodeOrientation="LEFT_TO_RIGHT" onKeyPressed="#onMessegeBoxSubmit" prefHeight="43.0" prefWidth="759.0" promptText="Enter message..." scaleShape="false" styleClass="chat_input" stylesheets="@../styles/chat.css" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font name="SansSerif Regular" size="18.0" />
+                            </font>
+                            <effect>
+                                <DropShadow height="8.0" radius="3.5" width="8.0" />
+                            </effect>
+                        </TextArea>
+                        <Button fx:id="buttonSend" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onSendClicked" prefHeight="43.0" prefWidth="133.0" scaleShape="false" text="Send" textAlignment="CENTER" HBox.hgrow="NEVER" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+    <left>
+        <VBox maxHeight="1.7976931348623157E308" style="-fx-background-color: #36393f;" BorderPane.alignment="CENTER">
+            <children>
+                <HBox fx:id="onlineUsersHbox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="217.0" style="-fx-background-color: #2f3136; -fx-border-width: 0;" stylesheets="@../styles/chat.css">
+                    <children>
+                        <Label prefHeight="50.0" prefWidth="124.0" text="Online Users:" textAlignment="CENTER" textFill="#fffffa">
+                            <font>
+                                <Font name="Showcard Gothic" size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                            <opaqueInsets>
+                                <Insets bottom="10.0" />
+                            </opaqueInsets>
+                        </Label>
+                        <Label fx:id="onlineCountLabel" prefHeight="48.0" prefWidth="94.0" text="0" textFill="WHITE">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <font>
+                                <Font name="Showcard Gothic" size="14.0" />
+                            </font>
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                        </Label>
+                    </children>
+                    <effect>
+                        <DropShadow height="12.0" radius="5.5" width="12.0" />
+                    </effect>
+                </HBox>
+                <ListView fx:id="userList" focusTraversable="false" maxHeight="1.7976931348623157E308" prefHeight="495.0" prefWidth="217.0" style="-fx-border-image-width: 0; -fx-background-color: #36393f;" stylesheets="@../styles/chat.css">
+                    <effect>
+                        <DropShadow height="10.0" radius="4.5" width="10.0" />
+                    </effect></ListView>
+            </children>
+        </VBox>
+    </left>
+    <top>
+        <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="83.0" prefWidth="1040.0" style="-fx-background-color: #36393f;" BorderPane.alignment="CENTER">
+            <right>
+                <HBox prefHeight="24.0" prefWidth="30.0" stylesheets="@../styles/chat.css" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="22.0" fitWidth="21.0" onMouseClicked="#closeApplication" pickOnBounds="true" preserveRatio="true" styleClass="button">
+                            <image>
+                                <Image url="@../images/close_normal.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets right="30.0" top="30.0" />
+                            </HBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </right>
+            <left>
+                <HBox alignment="TOP_CENTER" prefWidth="259.0" BorderPane.alignment="CENTER">
+                    <children>
+                  <Circle fx:id="userImageView" fill="#1f93ff00" radius="34.0" stroke="BLACK" strokeType="INSIDE">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Circle>
+                        <VBox alignment="TOP_CENTER" prefHeight="63.0" prefWidth="157.0">
+                            <HBox.margin>
+                                <Insets top="20.0" />
+                            </HBox.margin>
+                            <children>
+                                <Label fx:id="usernameLabel" alignment="TOP_CENTER" prefHeight="17.0" prefWidth="207.0" text="User Name" textFill="WHITE">
+                                    <font>
+                                        <Font name="Showcard Gothic" size="14.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <ComboBox fx:id="statusComboBox" prefHeight="25.0" prefWidth="101.0" promptText="Online" styleClass="combo-box" stylesheets="@../styles/chat.css">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Online" />
+                                            <String fx:value="Away" />
+                                            <String fx:value="Busy" />
+                                        </FXCollections>
+                                    </items>
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
+                                </ComboBox>
+                            </children>
+                        </VBox>
+                    </children></HBox>
+            </left>
+            <effect>
+                <DropShadow height="10.0" radius="4.5" width="10.0" />
+            </effect>
+            <center>
+                <ImageView fitHeight="48.0" fitWidth="237.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                    <image>
+                        <Image url="@../images/logo.png" />
+                    </image>
+                </ImageView>
+            </center>
+        </BorderPane>
+    </top>
+    <rotationAxis>
+        <Point3D />
+    </rotationAxis>
+</BorderPane>
